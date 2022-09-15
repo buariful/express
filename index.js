@@ -14,6 +14,11 @@ app.get('/', (req, res) => {
     res.send('server is running smoothlydddddddddddd')
 })
 
+app.get('/tomi', async (req, res) => {
+
+    res.send("tomi")
+})
+
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.ki5j5b8.mongodb.net/?retryWrites=true&w=majority`;
 
@@ -43,7 +48,10 @@ async function run() {
 }
 run().catch(console.dir);
 
+app.get('/ami', async (req, res) => {
 
+    res.send("ami")
+})
 
 app.listen(port, () => {
     console.log(`app running ${port}`)
