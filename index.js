@@ -1,7 +1,7 @@
 const express = require('express');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 const cors = require('cors');
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
@@ -30,6 +30,11 @@ async function run() {
             const cursor = database.find(query);
             const users = await cursor.toArray();
             res.send(users)
+        })
+
+        app.get('/ami', async (req, res) => {
+
+            res.send("ami")
         })
     }
     finally {
